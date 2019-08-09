@@ -10,6 +10,13 @@ import com.example.mangodemo.admin.model.SysUser;
 public interface SysUserMapper extends MyBatisBaseMapper<SysUser, Long> {
 
 	List<SysUser> findAll();
+	
+	/**
+	 * 分页查询
+	 * @return
+	 */
+	List<SysUser> findPage();
+	
 
 	@Override
 	 int deleteByPrimaryKey(Long id);

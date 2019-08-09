@@ -11,7 +11,7 @@ import com.example.mangodemo.core.page.PageResult;
  *
  * @param <T>
  */
-public interface CurlService<T> {
+public interface CurdService<T> {
 	
 	int save( T record);
 	
