@@ -6,11 +6,17 @@
 	<artifactId>mangodemo-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
-	<dependency>
-		<groupId>com.example</groupId>
+		<dependency>
+			<groupId>com.example</groupId>
 			<artifactId>mangodemo-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-	</dependency>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
 	</dependencies>
-	
+
 </project>
