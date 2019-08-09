@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.mangodemo.admin.service.SysUserService;
+import com.example.mangodemo.core.page.MybatisPageHelper;
 import com.example.mangodemo.core.page.PageRequest;
 import com.example.mangodemo.core.page.PageResult;
 
@@ -48,8 +49,7 @@ public class SysUserServiceImpl implements SysUserService{
 
 	@Override
 	public PageResult findPage(PageRequest pageRequest) {
-		// TODO Auto-generated method stub
-		return null;
+		return MybatisPageHelper.findPage(pageRequest, sysUserMapper);
 	}
 	
 	
