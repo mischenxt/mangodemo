@@ -3,6 +3,7 @@ package com.example.mangodemo.admin.controller;
 import com.example.mangodemo.admin.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,11 +21,12 @@ public class SysUserController {
 	@Autowired
 	private SysUserService sysUserService;
 	
-	@GetMapping("find")
+	@GetMapping("findAll")
 	public List<SysUser> findAll() {
 		return sysUserService.findAll();
 	}
 	
+	@PostMapping("findPage")
 	public HttpResult findPage(@RequestBody PageRequest pageRequest) {
 		return HttpResult.ok(sysUserService.findPage(pageRequest));
 		

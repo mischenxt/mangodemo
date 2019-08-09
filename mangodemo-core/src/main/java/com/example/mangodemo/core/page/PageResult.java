@@ -65,6 +65,12 @@ public class PageResult {
 	public void setContent(List<?> content) {
 		this.content = content;
 	}
+
+	@Override
+	public String toString() {
+		return "PageResult [当前页码=" + pageNum + ", 每页数量=" + pageSize + ", totalSize=" + totalSize + ", totalPage="
+				+ totalPage + ", content=" + content + "]";
+	}
 	
 	
 	
