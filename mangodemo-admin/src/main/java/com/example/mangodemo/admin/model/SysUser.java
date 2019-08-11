@@ -82,8 +82,31 @@ public class SysUser implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     private Byte delFlag;
+    
 
-    private static final long serialVersionUID = 1L;
+    // 非数据库字段
+    private String deptName;
+    // 非数据库字段
+    private String roleNames;
+    
+
+    public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	public String getRoleNames() {
+		return roleNames;
+	}
+
+	public void setRoleNames(String roleNames) {
+		this.roleNames = roleNames;
+	}
+
+	private static final long serialVersionUID = 1L;
 
     public Long getId() {
         return id;
