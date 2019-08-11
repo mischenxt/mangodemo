@@ -1,6 +1,7 @@
 package com.example.mangodemo.admin.mapper;
 
 import java.util.List;
+import java.util.Set;
 
 import com.example.mangodemo.admin.model.SysUser;
 
@@ -35,6 +36,11 @@ public interface SysUserMapper extends MyBatisBaseMapper<SysUser, Long> {
 
 	@Override
 	int updateByPrimaryKey(SysUser record);
+
+	SysUser findByName(String username);
+
+	Set<String> findPermissions(String name);
+
 
 	
 	

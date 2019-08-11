@@ -3,6 +3,7 @@ package com.example.mangodemo.admin.service.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -111,6 +112,16 @@ public class SysUserServiceImpl implements SysUserService{
 			row.getCell(++index).setCellValue(DateTimeUtils.getDateTime(user.getLastUpdateTime()));
 		}
 		return PoiUtils.createExcelFile(workBook, "download_user");
+	}
+
+	@Override
+	public SysUser findByName(String username) {
+		return sysUserMapper.findByName(username);
+	}
+
+	@Override
+	public Set<String> findPermissions(String name) {
+		return sysUserMapper.findPermissions(name);
 	}
 	
 }

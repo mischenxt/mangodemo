@@ -23,6 +23,9 @@
     create_time, last_update_by, last_update_time, del_flag
   </sql>
   
+  <select id="findByName" parameterType="java.lang.String" resultType="com.example.mangodemo.admin.model.SysUser">
+  	select name from sys_user where name=#{name};
+  </select>
    <select id="findAll" resultMap="BaseResultMap">
   	select 
   		<include refid="Base_Column_List"/>
@@ -226,7 +229,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
  
-  
+
   
   
 </mapper>
