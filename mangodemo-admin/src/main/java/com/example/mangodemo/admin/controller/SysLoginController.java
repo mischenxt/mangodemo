@@ -34,12 +34,13 @@ public class SysLoginController {
 	
 	@Autowired
 	private SysUserService sysUserService;
-	
+//	@Autowired
+//	private SysLoginLogService sysLoginLogService;
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	@PostMapping("login")
-	public HttpResult login(@RequestBody LoginBean loginBean, HttpServletRequest request) {
+	@PostMapping(value = "/login")
+	public HttpResult login(@RequestBody LoginBean loginBean, HttpServletRequest request) throws IOException {
 		String username = loginBean.getAccount();
 		String password = loginBean.getPassword();
 		String captcha = loginBean.getCaptcha();
@@ -67,13 +68,12 @@ public class SysLoginController {
 		// 系统登录认证
 		JwtAuthenticatioToken token = SecurityUtils.login(request, username, password, authenticationManager);
 		// 记录登录日志
-		//sysLoginLogService.writeLoginLog(username, IPUtils.getIpAddr(request));
+//		sysLoginLogService.writeLoginLog(username, IPUtils.getIpAddr(request));
 		return HttpResult.ok(token);
-		
 	}
 	
 	
-	@GetMapping("captchar.jpg")
+	@GetMapping("captcha.jpg")
 	public void captcha(HttpServletResponse response,HttpServletRequest request) throws IOException {
 		response.setHeader("Cache-Control", "no-store,no-cache");
 		response.setContentType("image/jpg");
